@@ -1,0 +1,5 @@
+#((onroad & l_car) & X(F(G(true))));
+var2 $ where ~ex1 p where true: p notin $ & p+1 in $;
+allpos $;
+var2 ONROAD, L_CAR;
+(((0 in ONROAD) & (0 in L_CAR)) & (ex1 v_1: v_1 in $ & v_1=1 & (ex1 v_2: v_2 in $ & v_1<=v_2&v_2<=max($) & ((ex1 v_3: v_3 in $ & v_2<=v_3&v_3<=max($) & false & (all1 v_4: v_4 in $ & v_2<=v_4&v_4<=v_3 => true)) | (all1 v_4: v_4 in $ & v_2<=v_4&v_4<=max($) => true)) & (all1 v_3: v_3 in $ & v_1<=v_3&v_3<v_2 => true))));

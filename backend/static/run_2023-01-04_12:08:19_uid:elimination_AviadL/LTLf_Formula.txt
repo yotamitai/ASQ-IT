@@ -1,0 +1,1 @@
+X X X X X X X ((lane4) & X F (G (True))) & F ((behind) & F(!behind))

@@ -1,0 +1,1 @@
+((below) & X F (G ((below)))) & F ( G(below))

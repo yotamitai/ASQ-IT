@@ -1,0 +1,1 @@
+((lane1) & X F (G ((lane1)))) & F((lane1 & !lane4) & X F (lane4 & !lane1))

@@ -1,0 +1,41 @@
+{
+    "agent": "Plain",
+    "domain": "highway",
+    "fps": 7,
+    "frames_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-20_09:34:35_uid:TalA_play/Highlight_Frames",
+    "num_trajectories": 4,
+    "output_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-20_09:34:35_uid:TalA_play",
+    "pause": 0,
+    "predicates": [
+        "behind",
+        "infrontof",
+        "above",
+        "below",
+        "lane1",
+        "lane2",
+        "lane3",
+        "lane4",
+        "slow",
+        "fast",
+        "collision"
+    ],
+    "query_data": {
+        "constraint_s_e": "changesinto",
+        "constraint_s_e_p1": "lane2",
+        "constraint_s_e_p2": "lane4",
+        "csrf_token": "ImNkNTBjMmI5MzQ1NGYzNzFjNWNmOWNjMTgwOGM5Y2JjZTc1OWNkMjAi.Y6Flaw.DX81sH8J7HN_BqZUmhiyIbLEj9o",
+        "end_lane": "None",
+        "end_pos": "None",
+        "end_speed": "None",
+        "pre_padding": false,
+        "start_lane": "None",
+        "start_pos": "below",
+        "start_speed": "None",
+        "submit": false
+    },
+    "seq_max_len": null,
+    "seq_min_len": 21,
+    "trace_constrains": {},
+    "user_id": "TalA_play",
+    "videos_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-20_09:34:35_uid:TalA_play/Conditional3"
+}

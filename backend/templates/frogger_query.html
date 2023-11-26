@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/main.css') }}">
+
+    <div class="container">
+        <title>Frogger Query interface</title>
+    </div>
+
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+        </div>
+    </nav>
+</header>
+<div id="loading">
+    <h1>&emsp; &emsp; &emsp; Loading videos...</h1>
+    <h3>&emsp; &emsp; &emsp; This may take a couple of seconds</h3>
+</div>
+<div id="content">
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-10">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages%}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                    {{message}}
+                </div>
+                {% endfor%}
+                {% endif%}
+                {% endwith%}
+                <h4 style="color:#8c00ff"><b>Remember:</b> Not specifying a dropdown choice means that any of the options
+                    are
+                    possible.<br/>
+                    <b>Tip:</b> Avoid over specification (filling many dropdowns) to obtain more
+                    videos.</h4>
+                <div class="content-section">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag()}}
+                        <fieldset class="form-group">
+                            <div id="banner1">
+                                <div class="inline-block">
+                                    <img src="{{url_for('static', filename='images/frogger_info.png')}}",
+                                         width="500",
+                                         height="125">
+                                </div>
+                            </div>
+                            <div id="banner2">
+                                <div class="inline-block">
+                                    <img src="{{url_for('static', filename='images/frogger_elements.png')}}" , width="500"
+                                         , height="100">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Suggestion: run first time without any specifications</h4>
+                                <h5>Start Frame:</h5>
+                                {{form.start_area.label(class="form-control-label")}}
+                                {{form.start_area(class="form-control form-control-lg mid")}}
+                            </div>
+
+                            <div class="form-group">
+                                {%for x in [form.start_up, form.start_down, form.start_left,
+                                form.start_right]%}
+                                {{x.label(class="form-control-label")}}
+                                {%if x.errors%}
+                                {{x(class="form-control form-control-lg short is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {%for error in x.errors%}
+                                    <span>{{ error }}</span>
+                                    {%endfor%}
+                                </div>
+                                {%else%}
+                                {{x(class="form-control form-control-lg short")}}
+                                {%endif%}
+                                {%endfor%}
+                            </div>
+
+                            <div class="form-group">
+                                <h5>End Frame:</h5>
+                                {{form.end_area.label(class="form-control-label")}}
+                                {{form.end_area(class="form-control form-control-lg mid")}}
+                                {{form.end_terminal.label(class="form-control-label")}}
+                                {%if form.end_terminal.errors%}
+                                {{form.end_terminal(class="form-control form-control-lg short
+                                is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {%for error in form.end_terminal.errors%}
+                                    <span>{{ error }}</span>
+                                    {%endfor%}
+                                </div>
+                                {%else%}
+                                {{form.end_terminal(class="form-control form-control-lg short")}}
+                                {%endif%}
+
+                            </div>
+                            <div class="form-group">
+                                {%for x in [form.end_up, form.end_down, form.end_left,
+                                form.end_right]%}
+                                {{x.label(class="form-control-label")}}
+                                {%if x.errors%}
+                                {{x(class="form-control form-control-lg short is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {%for error in x.errors%}
+                                    <span>{{ error }}</span>
+                                    {%endfor%}
+                                </div>
+                                {%else%}
+                                {{x(class="form-control form-control-lg short")}}
+                                {%endif%}
+                                {%endfor%}
+                            </div>
+
+
+                            <div class="form-group">
+                                <h5>Action Constraints:</h5>
+                                {%for x in [form.act_up, form.act_down, form.act_left,
+                                form.act_right]%}
+                                {{x.label(class="form-control-label")}}
+                                {%if x.errors%}
+                                {{x(class="form-control form-control-lg short is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {%for error in x.errors%}
+                                    <span>{{ error }}</span>
+                                    {%endfor%}
+                                </div>
+                                {%else%}
+                                {{x(class="form-control form-control-lg short")}}
+                                {%endif%}
+                                {%endfor%}
+                            </div>
+                            <div class="form-group">
+                                <h5>Area Constraints
+                                    {{form.area_constraint.label(class="form-control-label")}}
+                                    {%if form.area_constraint.errors%}
+                                    {{form.area_constraint(class="form-control form-control-lg mid
+                                    is-invalid")}}
+                                    <div class="invalid-feedback">
+                                        {%for error in form.area_constraint.errors%}
+                                        <span>{{ error }}</span>
+                                        {%endfor%}
+                                    </div>
+                                    {%else%}
+                                    {{form.area_constraint(class="form-control form-control-lg
+                                    mid")}}
+                                    {%endif%}
+                                </h5>
+                            </div>
+
+                        </fieldset>
+                        <div class="form-group">
+                            <input type="submit" name="anything_submit" value="Submit"
+                                   onclick="loading();"
+                                   class="btn btn-outline-info">
+                            {{done.hidden_tag()}}
+                            {{done.submit(class="btn btn-outline-info")}}
+                            {%if finished == "yes"%}
+                            <h5>Good job. Here is your code to progress in the survey: <b>895122530</b>
+                            </h5>
+                            {%elif finished == "no"%}
+                            <h5>It seems you haven't experimented enough with the system.</h5>
+                            <h5>Navigate here once you've finished exploring the system some
+                                more.</h5>
+                            {%endif%}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">// <![CDATA[
+    function loading() {
+        $("#loading").show();
+        $("#content").hide();
+    }
+
+    // ]]></script>
+</div>
+</body>
+</html>

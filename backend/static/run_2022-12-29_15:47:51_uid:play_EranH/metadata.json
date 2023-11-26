@@ -1,0 +1,41 @@
+{
+    "agent": "Plain",
+    "domain": "highway",
+    "fps": 7,
+    "frames_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-29_15:47:51_uid:play_EranH/Highlight_Frames",
+    "num_trajectories": 4,
+    "output_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-29_15:47:51_uid:play_EranH",
+    "pause": 0,
+    "predicates": [
+        "behind",
+        "infrontof",
+        "above",
+        "below",
+        "lane1",
+        "lane2",
+        "lane3",
+        "lane4",
+        "slow",
+        "fast",
+        "collision"
+    ],
+    "query_data": {
+        "constraint_s_e": "changesinto",
+        "constraint_s_e_p1": "below",
+        "constraint_s_e_p2": "above",
+        "csrf_token": "IjA3MzU1NDNjNzZmMDhkZmJhNDVlYmYyMzBhMjIxYzkxNTMzNGI4NDIi.Y62abg.XXjmK3kXODhS0uAXCiTdbeGr2I8",
+        "end_lane": "None",
+        "end_pos": "None",
+        "end_speed": "None",
+        "pre_padding": false,
+        "start_lane": "lane4",
+        "start_pos": "None",
+        "start_speed": "None",
+        "submit": false
+    },
+    "seq_max_len": null,
+    "seq_min_len": 21,
+    "trace_constrains": {},
+    "user_id": "play_EranH",
+    "videos_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2022-12-29_15:47:51_uid:play_EranH/Conditional3"
+}

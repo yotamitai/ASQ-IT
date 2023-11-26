@@ -1,0 +1,1 @@
+((above & lane3) & X F (G ((lane2)))) & F ( (above & !collision) & X F (collision & !above) )

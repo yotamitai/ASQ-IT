@@ -1,0 +1,24 @@
+{
+  "observation": {
+      "type": "Kinematics",
+      "absolute": false
+  },
+  "action": {
+      "type": "DiscreteMetaAction"
+  },
+  "env_id": "ParallelDriver-v0",
+  "offscreen_rendering": true,
+  "simulation_frequency": 15,
+  "policy_frequency": 1,
+  "lanes_count": 3,
+  "vehicles_count": 20,
+  "controlled_vehicles": 1,
+  "initial_lane_id": null,
+  "duration": 200,
+  "ego_spacing": 2,
+  "vehicles_density": 1,
+  "offroad_terminal": false,
+  "collision_reward": -10,
+  "parallel_distance_reward": 1,
+  "keep_distance_reward": 1
+}

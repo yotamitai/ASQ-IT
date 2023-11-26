@@ -1,0 +1,1 @@
+X X X X X X X ((behind & lane2) & X F (G ((collision & lane3)))) & F((lane1 & !lane3) & X F (lane3 & !lane1))

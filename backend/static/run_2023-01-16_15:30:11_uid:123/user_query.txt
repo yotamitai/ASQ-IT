@@ -1,0 +1,3 @@
+start: ('behind', 'lane1', None)
+end: (None, 'lane3', None)
+constraints: [('staysconstant', 'behind')]

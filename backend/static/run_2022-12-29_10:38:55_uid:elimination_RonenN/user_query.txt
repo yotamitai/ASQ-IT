@@ -1,0 +1,3 @@
+start: (None, 'lane1', None)
+end: (None, 'lane1', None)
+constraints: [('changes', 'lane1')]

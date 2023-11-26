@@ -1,0 +1,3 @@
+start: ('behind', None, None)
+end: ('collision', None, None)
+constraints: [('changesinto', 'behind', 'above')]

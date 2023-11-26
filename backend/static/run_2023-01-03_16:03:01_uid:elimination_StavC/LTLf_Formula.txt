@@ -1,0 +1,1 @@
+((below & lane3) & X F (G (True))) & F ((lane1) & F(!lane1))

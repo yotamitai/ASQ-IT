@@ -1,0 +1,1 @@
+X X X X X X X ((infrontof & lane2) & X F (G (True)))

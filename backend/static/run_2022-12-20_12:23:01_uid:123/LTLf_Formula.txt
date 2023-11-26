@@ -1,0 +1,1 @@
+(True & X F (G ((lane2)))) & F ( G(infrontof))

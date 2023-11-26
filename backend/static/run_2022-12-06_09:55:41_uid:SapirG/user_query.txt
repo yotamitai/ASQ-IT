@@ -1,0 +1,3 @@
+start: (None, None, None)
+end: ('collision', 'lane4', None)
+constraints: [('changesinto', 'lane1', 'lane2')]

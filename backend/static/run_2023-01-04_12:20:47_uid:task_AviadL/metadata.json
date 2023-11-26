@@ -1,0 +1,41 @@
+{
+    "agent": "Conditional3",
+    "domain": "highway",
+    "fps": 7,
+    "frames_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-01-04_12:20:47_uid:task_AviadL/Highlight_Frames",
+    "num_trajectories": 4,
+    "output_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-01-04_12:20:47_uid:task_AviadL",
+    "pause": 0,
+    "predicates": [
+        "behind",
+        "infrontof",
+        "above",
+        "below",
+        "lane1",
+        "lane2",
+        "lane3",
+        "lane4",
+        "slow",
+        "fast",
+        "collision"
+    ],
+    "query_data": {
+        "constraint_s_e": "changes",
+        "constraint_s_e_p1": "behind",
+        "constraint_s_e_p2": "None",
+        "csrf_token": "IjJiMzQ2YTIzNjY5ODRjMTM5MjhlMGQxMDM2YjlmMWM0ZDI3ZGNkY2Ui.Y7VS9w.b20lfWIn6SuINZwe0Q44Grbbo-g",
+        "end_lane": "None",
+        "end_pos": "None",
+        "end_speed": "None",
+        "pre_padding": false,
+        "start_lane": "lane2",
+        "start_pos": "None",
+        "start_speed": "None",
+        "submit": false
+    },
+    "seq_max_len": null,
+    "seq_min_len": 17,
+    "trace_constrains": {},
+    "user_id": "task_AviadL",
+    "videos_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-01-04_12:20:47_uid:task_AviadL/Conditional3"
+}

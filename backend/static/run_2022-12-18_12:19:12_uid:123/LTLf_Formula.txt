@@ -1,0 +1,1 @@
+(True & X F (G (True))) & ( (below & !infrontof) & X F (infrontof & !below) )

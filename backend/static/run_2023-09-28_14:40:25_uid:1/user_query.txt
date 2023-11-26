@@ -1,0 +1,3 @@
+start: ('onroad', 'l_car', None, None, None)
+end: ('onriver', 'drown', None, None, None, None)
+constraints: [('occurs', 'd_occurs')]

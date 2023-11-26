@@ -1,0 +1,1 @@
+((behind & lane3) & X F (G ((infrontof & lane4))))

@@ -1,0 +1,3 @@
+start: ('behind', 'lane2', None)
+end: ('below', 'lane4', None)
+constraints: [('changes', 'lane2')]

@@ -1,0 +1,41 @@
+{
+    "agent": "Conditional3",
+    "domain": "highway",
+    "fps": 7,
+    "frames_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-03-15_11:57:50_uid:123/Highlight_Frames",
+    "num_trajectories": 4,
+    "output_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-03-15_11:57:50_uid:123",
+    "pause": 0,
+    "predicates": [
+        "behind",
+        "infrontof",
+        "above",
+        "below",
+        "lane1",
+        "lane2",
+        "lane3",
+        "lane4",
+        "slow",
+        "fast",
+        "collision"
+    ],
+    "query_data": {
+        "constraint_s_e": "None",
+        "constraint_s_e_p1": "None",
+        "constraint_s_e_p2": "None",
+        "csrf_token": "ImUyMTk2OGYzMTFkNjFkMDRiM2UwMWMwMzcyYWM4NmU0NjdkOTJkNWQi.ZBGWlw.wAdyKkaJIfmzT8VAYqxLm2K70KA",
+        "end_lane": "lane3",
+        "end_pos": "None",
+        "end_speed": "None",
+        "pre_padding": false,
+        "start_lane": "lane2",
+        "start_pos": "behind",
+        "start_speed": "None",
+        "submit": false
+    },
+    "seq_max_len": null,
+    "seq_min_len": 17,
+    "trace_constrains": {},
+    "user_id": "123",
+    "videos_dir": "/home/yotama/OneDrive/Local_Git/Agent-Interview/backend/static/run_2023-03-15_11:57:50_uid:123/Conditional3"
+}

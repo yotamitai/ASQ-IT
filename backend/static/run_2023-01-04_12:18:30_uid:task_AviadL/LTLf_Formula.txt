@@ -1,0 +1,1 @@
+((lane1) & X F (G ((lane2)))) & F ((above) & F(!above))
