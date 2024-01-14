@@ -18,15 +18,6 @@ def by_interface(args):
         traces, states = env.predicate_env.get_traces(env, agent, args.n_traces, args.verbose)
         env.close()
         evaluation.close()
-    elif args.interface == "Frogger":
-        params = {"config_path": args.config_path, "config": args.config,
-                  "load_path": args.load_path, "output_dir": args.output_dir,
-                  "n_traces": args.n_traces, "fps": args.fps}
-        env, agent = get_agent(args.interface, params)
-        env.args = args
-        env.predicate_env = FroggerEnv()
-        traces, states = env.predicate_env.get_traces(env, agent, args.n_traces, args.verbose)
-        env.close()
     return traces, states
 
 
@@ -53,44 +44,25 @@ if __name__ == '__main__':
     parser.add_argument('-v', '--verbose', help='print information to the console',
                         action='store_true', default=True)
     parser.add_argument('-results', '--results_dir', help='results directory',
-                        default=abspath('../queries/results'))
+                        default=abspath('../results'))
     parser.add_argument('-steps', '--max_trace_steps', help='max trace steps',
                         default=200)
     args = parser.parse_args()
 
+    "RUN"
     args.interface = "Highway"
 
     if args.interface == "Highway":
         from interfaces.Highway.highway_interface import highway_config, HighwayKinematicEnv, \
-        HighwayKinematicEnvWithSpeed
+            HighwayKinematicEnvWithSpeed
+
         args.agent = 'Plain'
         lane_configs = [4]  # [2, 3, 4]
-
         args = highway_config(args)
-        args.n_traces = 200
+        args.n_traces = 10
         args.config_changes['env']["lanes_count"] = 4
         args.config_changes['env']['vehicles_density'] = 1
 
 
-        # """get multiple data sets"""
-        # trace_multiplier = 10
-        # for n_lanes in lane_configs:
-        #     args.n_traces = n_lanes * trace_multiplier
-        #     args.config_changes['env']["lanes_count"] = n_lanes
-        #     for density in [1, 2]:
-        #         args.config_changes['env']['vehicles_density'] = density
-        #         args.data_name = f"_Lanes-{n_lanes}_Density-{density}_N-{args.n_traces}"
-        #         print(f"Generating - {args.data_name}")
-        #         generate_traces(args)
-
-
-    elif args.interface == "Frogger":
-        from interfaces.Frogger.frogger_interface import frogger_config, FroggerEnv
-        args.agent = 'NoLeft'
-        args = frogger_config(args)
-        args.n_traces = 50
-        #TODO deal with changes in predicate vector due to change in action spaces (No left , Yes Idle)
-
-    "RUN"
     args.data_name = ""
     generate_traces(args)

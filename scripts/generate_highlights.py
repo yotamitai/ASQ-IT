@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     # RUN
 
-    args.load_dir = abspath("data/Highway/Conditional_SecondLane_BumperCar")
+    args.load_dir = abspath("../data/Highway/Plain")
     args.fps = 7
     args.trajectory_length = 14
     args.highlights_div = True

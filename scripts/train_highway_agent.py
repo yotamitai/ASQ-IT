@@ -77,15 +77,15 @@ if __name__ == '__main__':
     parser.add_argument('--observation_config', help='observation type', default=None)
     args = parser.parse_args()
 
-    args.config = "FirstLane"
-    args.num_episodes = 2000
+    args.config = "Plain"
+    args.num_episodes = 2
 
     """train"""
-    # args.config = abspath(f'../agents/configs/full_configs/{args.config}.json')
+    args.config = abspath(f'../agents/configs/full_configs/{args.config}.json')
 
     """load"""
-    args.load_path = abspath(f'../agents/Trained/Highway/{args.config}')
-    args.num_episodes = 6
+    # args.load_path = abspath(f'../agents/Trained/Highway/{args.config}')
+    # args.num_episodes = 6
 
     """evaluate"""
     args.eval = True
